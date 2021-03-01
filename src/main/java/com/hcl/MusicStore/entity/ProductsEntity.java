@@ -54,4 +54,8 @@ public class ProductsEntity {
 		this.productQuantity = productQuantity;
 	}
 	
+	public String toString() {
+		return this.productName;
+	}
+	
 }

@@ -2,19 +2,31 @@ package com.hcl.MusicStore.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hcl.MusicStore.entity.ProductsEntity;
 import com.hcl.MusicStore.entity.UserEntity;
+import com.hcl.MusicStore.repositories.ProductRepository;
 import com.hcl.MusicStore.repositories.UserRepository;
+import com.hcl.MusicStore.services.ProductService;
 
 @Controller
+@SessionAttributes("products")
 public class UserController {
 	
 	@Autowired
+	ProductService productService;
+	
+	@Autowired
 	UserRepository userRepo;
+	
+	@Autowired
+	ProductRepository productRepo;
 	
 	ModelAndView registerView = new ModelAndView("register");
 	ModelAndView registersuccessfulView = new ModelAndView("registersuccessful");
@@ -50,7 +62,8 @@ public class UserController {
 	}
 	
 	@GetMapping(path = "/home")
-	public ModelAndView homePage() {
+	public ModelAndView homePage(ModelMap modelMap, @ModelAttribute ProductsEntity productEntity) {
+		modelMap.put("products", productService.GetAllProducts());
 		return homeView;
 	}
 }
