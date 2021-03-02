@@ -1,27 +1,20 @@
 package com.hcl.MusicStore.entity;
 
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
-public class ProductsEntity {
+public class CartEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ProductID")
-	private Long productID;
+	@Column(name = "CartID")
+	private Long cartID;
 	
 	@Column(name = "ProductName")
 	private String productName;
-	
-	@Column(name = "ProductPrice")
-	private float productPrice;
 	
 	@Column(name = "ProductDescription")
 	private String productDescription;
@@ -29,31 +22,14 @@ public class ProductsEntity {
 	@Column(name = "ProductImage")
 	private String productImage;
 	
+	@Column(name = "ProductPrice")
+	private float productPrice;
 	
 	
-	public Long getProductID() {
-		return productID;
-	}
-
-
-	public void setProductID(Long productID) {
-		this.productID = productID;
-	}
-
-
-	public String getProductName() {
-		return productName;
-	}
-
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-
 	public float getProductPrice() {
 		return productPrice;
 	}
+
 
 
 	public void setProductPrice(float productPrice) {
@@ -61,9 +37,35 @@ public class ProductsEntity {
 	}
 
 
+
+	public Long getCartID() {
+		return cartID;
+	}
+
+
+
+	public void setCartID(Long cartID) {
+		this.cartID = cartID;
+	}
+
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+
 	public String getProductDescription() {
 		return productDescription;
 	}
+
 
 
 	public void setProductDescription(String productDescription) {
@@ -71,9 +73,11 @@ public class ProductsEntity {
 	}
 
 
+
 	public String getProductImage() {
 		return productImage;
 	}
+
 
 
 	public void setProductImage(String productImage) {
@@ -81,8 +85,12 @@ public class ProductsEntity {
 	}
 
 
+
+	@Override
 	public String toString() {
-		return this.productName;
+		return "CartEntity [cartID=" + cartID + ", productName=" + productName + ", productDescription="
+				+ productDescription + ", productImage=" + productImage + ", productPrice=" + productPrice + "]";
 	}
+
 	
 }

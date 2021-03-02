@@ -17,8 +17,12 @@
     <input type="text" class="form-control" id="productprice" name="productPrice" placeholder="Enter Product Price">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Product Quantity </label>
-    <input type="number" class="form-control" id="productquantity" name="productQuantity" placeholder="Enter Product Quantity">
+    <label for="productdescription">Product Description </label>
+    <input type="text" class="form-control" id="productdescription" name="productDescription" placeholder="Enter Product Description">
+  </div>
+  <div class="form-group">
+    <label for="productimage">Product Image </label>
+    <input type="text" class="form-control" id="productimage" name="productImage">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

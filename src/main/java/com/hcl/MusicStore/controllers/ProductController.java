@@ -17,6 +17,8 @@ public class ProductController {
 	@Autowired
 	ProductRepository productRepo;
 	
+	
+	//Admin Functionality
 	@GetMapping(path = "/addproduct")
 	public ModelAndView products() {
 		return addproductView;
