@@ -11,14 +11,17 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">MusicStore</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
@@ -29,6 +32,11 @@
           <a class="nav-link" href="/cart">Cart</a>
         </li>
       </ul>
+      <form action="search" class="d-flex" method="POST">
+				<input class="form-control me-2" type="search" placeholder="Search"
+					aria-label="Search" name="search">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
     </div>
   </div>
 </nav>
@@ -72,6 +80,7 @@
   </button>
 </div>
 <br>
+
 <div class="container">  
   <h3>Welcome to Music Store</h3> <br>
   <div class="d-flex flex-row">
@@ -81,7 +90,7 @@
   <div class="card-body">
     <h5 class="card-title">${product.productName}</h5>
     <p class="card-text">${product.productDescription}</p>
-    <p class="card-text">$ ${product.productPrice}</p>
+    <p class="card-text">$ ${product.productPrice}0</p>
     <form action="home" method="POST">
     <input type="hidden" value="${product.productName}" name="productName">
     <input type="hidden" value="${product.productDescription}" name="productDescription">

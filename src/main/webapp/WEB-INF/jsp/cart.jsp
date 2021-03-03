@@ -26,7 +26,7 @@
 					<hr>
 					<h6 class="mb-0">Shopping cart</h6>
 					<div class="d-flex justify-content-between">
-						<span>You have 4 items in your cart</span>
+						<span>You have ${products.stream().map(product -> product.productName).count()} items in your cart</span>
 						<div class="d-flex flex-row align-items-center">
 							<span class="text-black-50">Sort by:</span>
 							<div class="price ml-2">
@@ -46,7 +46,7 @@
 							</div>
 							<div class="d-flex flex-row align-items-center">
 								<span class="d-block">1</span><span
-									class="d-block ml-5 font-weight-bold">${product.productPrice}</span><i
+									class="d-block ml-5 font-weight-bold">$ ${product.productPrice}0</span><i
 									class="fa fa-trash-o ml-3 text-black-50"></i>
 							</div>
 						</div>
@@ -84,26 +84,26 @@
 					<div class="row">
 						<div class="col-md-6">
 							<label class="credit-card-label">Date</label><input type="text"
-								class="form-control credit-inputs" placeholder="12/24">
+								class="form-control credit-inputs" placeholder="mm/yy">
 						</div>
 						<div class="col-md-6">
 							<label class="credit-card-label">CVV</label><input type="text"
-								class="form-control credit-inputs" placeholder="342">
+								class="form-control credit-inputs" placeholder="CVV">
 						</div>
 					</div>
 					<hr class="line">
 					<div class="d-flex justify-content-between information">
-						<span>Subtotal</span><span>$3000.00</span>
+						<span>Subtotal</span><span>$ ${products.stream().map(product -> product.productPrice).sum()}0</span>
 					</div>
 					<div class="d-flex justify-content-between information">
-						<span>Shipping</span><span>$20.00</span>
+						<span>Shipping</span><span>Free</span>
 					</div>
 					<div class="d-flex justify-content-between information">
-						<span>Total(Incl. taxes)</span><span>$3020.00</span>
+						<span>Total(Incl. taxes)</span><span>$ ${products.stream().map(product -> product.productPrice).sum()}0</span>
 					</div>
 					<a href="/checkout"
 						class="btn btn-primary btn-block d-flex justify-content-between mt-3"
-						type="button"><span>$3020.00</span><span>Checkout<i
+						type="button"><span>$ ${products.stream().map(product -> product.productPrice).sum()}0</span><span>Checkout<i
 							class="fa fa-long-arrow-right ml-1"></i></span></a>
 				</div>
 			</div>

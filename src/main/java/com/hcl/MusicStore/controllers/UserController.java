@@ -39,10 +39,10 @@ public class UserController {
 		return registerView;
 	}
 	
-	@PostMapping(path = "/registersuccessful")
+	@PostMapping(path = "/login")
 	public ModelAndView successfulRegister(@ModelAttribute UserEntity userEntity) {
 		userRepo.save(userEntity);
-		return registersuccessfulView;
+		return loginView;
 	}
 	
 	@GetMapping(path = "/login")
