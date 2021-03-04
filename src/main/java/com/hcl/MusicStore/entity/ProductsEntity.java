@@ -29,8 +29,21 @@ public class ProductsEntity {
 	@Column(name = "ProductImage")
 	private String productImage;
 	
+	@Column(name = "ProductCategory")
+	private String productCategory;
 	
 	
+	
+	public String getProductCategory() {
+		return productCategory;
+	}
+
+
+	public void setProductCategory(String productCategory) {
+		this.productCategory = productCategory;
+	}
+
+
 	public Long getProductID() {
 		return productID;
 	}

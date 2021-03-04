@@ -46,8 +46,13 @@
 							</div>
 							<div class="d-flex flex-row align-items-center">
 								<span class="d-block">1</span><span
-									class="d-block ml-5 font-weight-bold">$ ${product.productPrice}0</span><i
-									class="fa fa-trash-o ml-3 text-black-50"></i>
+									class="d-block ml-5 font-weight-bold">$ ${product.productPrice}0</span>
+									<form action="cart" method="POST">
+									<input type="hidden" value="${product.cartID}" name="cartID">
+									<button class="btn btn-light" type="submit">
+									<i class="fa fa-trash-o ml-3 text-black-50"></i>
+									</button>
+									</form>
 							</div>
 						</div>
 					</c:forEach>

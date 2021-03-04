@@ -86,23 +86,25 @@
   <div class="d-flex flex-row">
   <c:forEach items="${products}" var="product">
   <div class="card" style="width: 18rem;">
-  <img src="${product.productImage}" class="card-img-top" alt="..." width="40">
+  <img src="${product.productImage}" class="card-img-top img-fluid" alt="..." width="40">
   <div class="card-body">
     <h5 class="card-title">${product.productName}</h5>
     <p class="card-text">${product.productDescription}</p>
     <p class="card-text">$ ${product.productPrice}0</p>
+    <p class="card-text">Category: ${product.productCategory}</p>
     <form action="home" method="POST">
     <input type="hidden" value="${product.productName}" name="productName">
     <input type="hidden" value="${product.productDescription}" name="productDescription">
     <input type="hidden" value="${product.productImage}" name="productImage">
     <input type="hidden" value="${product.productPrice}" name="productPrice">
+    <input type="hidden" value="${product.productCategory}" name="productCategory">
     <button type="submit" class="btn btn-primary">Add To Cart</button>
     </form>
   </div>
 </div>
 </c:forEach>
 </div>
-</div>  
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>   
 </body>
